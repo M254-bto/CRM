@@ -9,7 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def landing_page(request):
-    return render(request, 'landing.html')
+    return render(request, 'leads/landing.html')
 
 
 class SignupView(generic.CreateView):
@@ -22,7 +22,7 @@ class SignupView(generic.CreateView):
 
 def lead_list(request):
     leads = Lead.objects.all()
-    return render(request, "page_one.html" ,context={
+    return render(request, "leads/page_one.html" ,context={
         "leads": leads
     })
 
@@ -30,13 +30,13 @@ def lead_list(request):
 
 def lead_detail(request, pk):
     lead = Lead.objects.get(id=pk)
-    return render(request, 'lead_detail.html', context={
+    return render(request, 'leads/lead_detail.html', context={
         "lead": lead
     })
 
 
 class LeadCreateView(generic.CreateView):
-    template_name = 'lead_create.html'
+    template_name = 'leads/lead_create.html'
     form_class = LeadModelForm
 
     def get_success_url(self):
@@ -55,7 +55,7 @@ def lead_create(request):
             form.save()
             return redirect('/')
 
-    return render(request, 'lead_create.html', context={
+    return render(request, 'leads/lead_create.html', context={
         "form": form
     })
 
@@ -69,7 +69,7 @@ def lead_update(request, pk):
         if form.is_valid():
             form.save()
              
-    return render(request, 'lead_update.html', context={
+    return render(request, 'leads/lead_update.html', context={
         "lead": lead,
         "form": form
     })

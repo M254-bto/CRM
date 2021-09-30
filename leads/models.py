@@ -25,7 +25,7 @@ class Lead(models.Model):
 
 class Agent(models.Model):
     user = models.OneToOneField("User", on_delete=models.CASCADE)
-    organsation = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    organsation = models.ForeignKey(UserProfile, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.user.username

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+{% load  static %}
+
+
+<section class="text-gray-400 bg-gray-900 body-font overflow-hidden">
+<a href="{% url 'agents:agent-list' %}">Go back to Agents</a>
+
+  <div class="container px-5 py-24 mx-auto">
+    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+      <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+        <h2 class="text-sm title-font text-gray-500 tracking-widest">Agent NAME</h2>
+        <h1 class="text-white text-3xl title-font font-medium mb-4">{{agents.user.username}}</h1>
+        <div class="flex mb-4">
+          <a class="flex-grow border-gray-800 text-indigo-400 border-b-2 border-indigo-500 py-2 text-lg px-1">Description</a>
+          <a href="#" class="flex-grow border-gray-800 hover:text-indigo-400 border-b-2 hover:border-indigo-500 py-2 text-lg px-1">update</a>
+        </div>
+        <p class="leading-relaxed mb-4">The above Lead years old, is categorically stunning and will do anything to make her happy.</p>
+        <div class="flex border-t border-gray-800 py-2">
+          <span class="text-gray-500">Age</span>
+          <span class="ml-auto text-white">32</span>
+        </div>
+        <div class="flex border-t border-gray-800 py-2">
+          <span class="text-gray-500">Contact</span>
+          <span class="ml-auto text-white">+245 712 344 556</span>
+        </div>
+<div class="flex">
+        </div>
+      </div>
+      <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="{% static 'Images/chebet.jpg' %}">
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+
+
+
